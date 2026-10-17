@@ -1,0 +1,439 @@
+
+/* =================================
+   SELUNGBA — STORY WEBSITE
+   Dark Forest Green & Gold Theme
+================================= */
+
+:root {
+  --green: #183c32;
+  --dark: #10271f;
+  --deep: #091711;
+  --gold: #d3bd7b;
+  --cream: #f1eee6;
+  --muted: #b9c4bc;
+  --border: rgba(211, 189, 123, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--cream);
+  background:
+    linear-gradient(
+      rgba(9, 23, 17, 0.88),
+      rgba(9, 23, 17, 0.96)
+    ),
+    url("assets/pine-background.jpg") center / cover fixed;
+  background-color: var(--deep);
+  line-height: 1.7;
+}
+
+/* Main layout */
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+
+section {
+  padding: 55px 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gold);
+  font-weight: normal;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* Header */
+
+.site-header {
+  background: rgba(9, 23, 17, 0.95);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.logo-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* Hero section */
+
+.hero {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 66px);
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+.gold-line {
+  width: 75px;
+  height: 2px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+/* Section headings */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 34px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Story feed */
+
+.story-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.story-card {
+  min-width: 0;
+  overflow: hidden;
+  background: rgba(16, 39, 31, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.story-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  background: #08140f;
+  cursor: pointer;
+}
+
+.story-content {
+  padding: 20px;
+}
+
+.story-title {
+  font-size: 23px;
+  margin-bottom: 6px;
+}
+
+.story-date {
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+/* Like and comment buttons */
+
+.story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.action-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cream);
+  padding: 7px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.action-button:hover,
+.action-button.liked {
+  background: var(--green);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Comments */
+
+.comments-section {
+  padding-top: 18px;
+}
+
+.comments-title {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.comment {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border-left: 2px solid var(--gold);
+  overflow-wrap: anywhere;
+}
+
+.comment strong {
+  color: var(--gold);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.comment p {
+  font-size: 14px;
+  color: var(--cream);
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs */
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(5, 17, 12, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--cream);
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+}
+
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1ada4;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  background: var(--gold);
+  color: var(--deep);
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.upload-button {
+  display: block;
+  margin: 25px auto 0;
+}
+
+/* Empty gallery */
+
+.empty-message {
+  grid-column: 1 / -1;
+  padding: 55px 20px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+}
+
+/* About section */
+
+.about-box {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px;
+  text-align: center;
+  background: rgba(16, 39, 31, 0.85);
+  border: 1px solid var(--border);
+}
+
+.about-box p {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: 40px;
+  padding: 28px 15px;
+  text-align: center;
+  background: rgba(5, 17, 12, 0.9);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Story image viewer */
+
+.story-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.94);
+}
+
+.story-viewer.active {
+  display: flex;
+}
+
+.story-viewer img {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.viewer-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Mobile design */
+
+@media (max-width: 650px) {
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 270px;
+  }
+
+  .story-gallery {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .story-content {
+    padding: 16px;
+  }
+
+  .about-box {
+    padding: 22px;
+  }
+
+  section {
+    padding: 38px 0;
+  }
+}
